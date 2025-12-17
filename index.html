@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    background-color: #282B2E;
+   color:#f5f7fa ;
+      font-family: Candara, Calibri, Segoe, sans-serif;
+
+  }
+div { line-height: 1.6; }
+.letter {
+  display: none;
+  margin-top: 30px;
+  padding: 28px 26px;
+  background-color: #f0f8ff; /* giấy thư trắng lạnh */
+  color: #1f3a5f;
+  border-radius: 12px;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.15);
+
+  line-height: 1.7;
+
+  animation: openLetter 0.6s ease forwards;
+}
+@keyframes openLetter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.letter h3 {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.letter p {
+  margin-top: 12px;
+}
+
+</style>
+<body>
+
+<h2>Secret động trời dành cho Hòi Ăng</h2>
+
+<p onclick="clickName()">Ấn vô đây điii</p>
+<div id="letter" class="letter">
+  <h3>From: Tờ nhân</h3>
+  <p>Chúc mừng. Đây là bức thư bí mật cho An.</p>
+</div>
+
+<script>
+function clickName() {
+  let pass = prompt("Nhập mật khẩu vô nha (gợi ý là ngày tháng sinh của mình VD: 1907)");
+  if (pass === "123") {
+    document.getElementById("letter").style.display = "block";
+  } else {
+    alert("Sai rồi, có phải An không đấy?");
+  }
+}
+</script>
+
+
+
+</body>
+</html>

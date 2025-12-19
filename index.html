@@ -12,27 +12,18 @@ div { line-height: 1.6; }
   display: none;
   margin-top: 30px;
   padding: 28px 26px;
-  background-color: #f0f8ff; /* giấy thư trắng lạnh */
+  background-color: #f0f8ff;
   color: #1f3a5f;
   border-radius: 12px;
-
-  box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.15);
-
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   line-height: 1.7;
 
-  animation: openLetter 0.6s ease forwards;
+  transform: scaleX(0);
+  transform-origin: center;
+ animation: openPaper 0.7s cubic-bezier(.2,.8,.2,1) forwards;
 }
-@keyframes openLetter {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
+
+
 .letter h3 {
   margin-top: 0;
   font-weight: 600;
@@ -40,6 +31,17 @@ div { line-height: 1.6; }
 
 .letter p {
   margin-top: 12px;
+}
+
+  @keyframes openPaper {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 
 </style>
@@ -50,15 +52,18 @@ div { line-height: 1.6; }
 <p onclick="clickName()">Ấn vô đây điii</p>
 <div id="letter" class="letter">
   <h3>From: Tờ nhân</h3>
-  <p>Hé lô cô bé cute lạnk lùnk đtđ _ Hòi Ăng
-    Mặc dù m không có thi kì thi sắp tới này nhưng chặng đường còn dài, chúng mình còn 1 năm nữa lận, với lại sắp tới cũng gần đến kì thi HSG tỉnh ròi, chỉ mong trong kì thi đó m có thể thực sự bùng nổ và tỏa sáng thay cho những khoảnh khắc m đã bỏ lỡ và đạt giải số thật cao nhâ. BTW cái bánh m tặng t ăn ngol lắm</p>
+  <p>Hé lô cô bé cute lạnk lùnk đtđ _ Hòi Ăng Mặc dù m không có thi kì thi sắp tới này nhưng chặng đường còn dài, chúng mình còn 1 năm nữa lận, với lại sắp tới cũng gần đến kì thi HSG tỉnh ròi, chỉ mong trong kì thi đó m có thể thực sự bùng nổ và tỏa sáng thay cho những khoảnh khắc m đã bỏ lỡ và đạt giải số thật cao nhâ. BTW cái bánh m tặng t ăn ngol lắm
+</p>
 </div>
+<audio id="bgm" src="nhac.mp3" preload="auto" loop></audio>
 
 <script>
 function clickName() {
   let pass = prompt("Nhập mật khẩu vô nha (gợi ý là ngày tháng sinh của mình VD: 1907)");
   if (pass === "1604") {
     document.getElementById("letter").style.display = "block";
+    document.getElementById("bgm").play();
+
   } else {
     alert("Sai rồi, có phải An không đấy?");
   }
@@ -69,7 +74,3 @@ function clickName() {
 
 </body>
 </html>
-
-
-
-

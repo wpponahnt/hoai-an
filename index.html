@@ -43,17 +43,22 @@ div { line-height: 1.6; }
     opacity: 1;
   }
 }
+#more, #img {
+  display: none;
+}
 
 </style>
 <body>
 
-<h2>Secret động trời dành cho Hòi Ăng</h2>
+<h2>Secret động trời dành cho hòi ăng</h2>
 
-<p onclick="clickName()">Ấn vô đây điii</p>
+<p onclick="clickName()">ẤN VÔ ĐÂY ĐIIII</p>
+<p id="more" onclick="clickMore()">ĐỌC XONG THƯ ĐI RỒI ẤN TIẾP NỮA NÈ</p>
+<img id="img" src="anh.jpg">
+
 <div id="letter" class="letter">
   <h3>From: Tờ nhân</h3>
-  <p>Hé lô cô bé cute lạnk lùnk đtđ _ Hòi Ăng Mặc dù m không có thi kì thi sắp tới này nhưng chặng đường còn dài, chúng mình còn 1 năm nữa lận, với lại sắp tới cũng gần đến kì thi HSG tỉnh ròi, chỉ mong trong kì thi đó m có thể thực sự bùng nổ và tỏa sáng thay cho những khoảnh khắc m đã bỏ lỡ và đạt giải số thật cao nhâ. BTW cái bánh m tặng t ăn ngol lắm
-</p>
+  <p>Hé lô cô bé cute lạnk lùnk đtđ _ Hòi Ăng Mặc dù m không có thi kì thi sắp tới này nhưng chặng đường còn dài, chúng mình còn 1 năm nữa lận, với lại sắp tới cũng gần đến kì thi HSG tỉnh ròi, chỉ mong trong kì thi đó m có thể thực sự bùng nổ và tỏa sáng thay cho những khoảnh khắc m đã bỏ lỡ và đạt giải số thật cao nhâ. BTW cái bánh m tặng t ăn ngol lắm</p>
 </div>
 <audio id="bgm" src="nhac.mp3" preload="auto" loop></audio>
 
@@ -62,13 +67,21 @@ function clickName() {
   let pass = prompt("Nhập mật khẩu vô nha (gợi ý là ngày tháng sinh của mình VD: 1907)");
   if (pass === "1604") {
     document.getElementById("letter").style.display = "block";
+    document.getElementById("more").style.display = "block";
     document.getElementById("bgm").play();
-
   } else {
     alert("Sai rồi, có phải An không đấy?");
   }
 }
-  
+
+function clickMore() {
+  let pass2 = prompt("Nhập mật khẩu nha (gợi ý: ngày tháng thi HSGQG)");
+  if (pass2 === "2512") {
+    document.getElementById("img").style.display = "block";
+  } else {
+    alert("Sai rồi nè, có nhớ k đấy");
+  }
+}
 </script>
 
 
